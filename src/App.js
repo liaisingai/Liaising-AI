@@ -322,7 +322,7 @@ const App = ({ signOut }) => {
   
 
   return (
-    <Authenticator formFields={formFields} components={components} socialProviders={['amazon', 'apple', 'facebook', 'google']}>
+    <Authenticator formFields={formFields} components={components} socialProviders={['amazon', 'google']}>
       {({ signOut }) => {
         return (
           <div className="App !overflow-hidden !h-screen">
