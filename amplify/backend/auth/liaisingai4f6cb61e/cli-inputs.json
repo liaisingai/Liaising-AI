@@ -36,10 +36,30 @@
     "sharedId": "4f6cb61e",
     "resourceName": "liaisingai4f6cb61e",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
+    "useDefault": "defaultSocial",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "liaisingaie0d958cb-e0d958cb",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://liaisingai.com/\"],\"LogoutURLs\":[\"https://liaisingai.com/\"]}",
+    "authProviders": []
   }
 }
