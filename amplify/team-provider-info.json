@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "liaisingai4f6cb61e": {}
+      },
+      "api": {
+        "liaisingai": {}
+      },
+      "storage": {
+        "imagestorage": {}
       }
     }
   }
