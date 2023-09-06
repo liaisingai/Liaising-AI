@@ -26,7 +26,6 @@ const Requirements = () => {
 
     const handleSubmit = (values, { setSubmitting }) => {
         // Handle form submission here
-        console.log(values);
         setSubmitting(false);
     };
 

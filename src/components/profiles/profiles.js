@@ -24,43 +24,21 @@ const Profile = () => {
         resume: "",
     };
 
-    const handleSubmit = (values, { setSubmitting }) => {
+    const handleSubmit = async  (values, { setSubmitting, resetForm }) => {
         // Handle form submission here
-        console.log(values);
-        setSubmitting(false);
-    };
-
-    const createProfileMethod = async (event) => {
-        event.preventDefault();
-        // const form = new FormData(event.target);
-        // const image = form.get("image");
-        const modelFields = {
-            firstName: "Sai",
-            lastName: "Sai",
-            emailAddress: "scr@test.com",
-            phoneNumber: "571-524-2266",
-            skillSet: "Sai",
-            visaStatus: "Sai",
-            yearsOfExperienceInUs: "Sai",
-            yearsOfExperienceInternational: "Sai",
-            currentlyWorksAt: "Sai",
-            linkedInURL: "Sai",
-            certifications: "Sai",
-            city: "Sai",
-            state: "Sai",
-            zip: "Sai",
-            resume: "Sai",
-        };
-        // if (!!data.resume) await Storage.put(data.name, resume);
         await API.graphql({
-            query: createProfileMutation,
-            variables: {
-                input: {
-                    ...modelFields,
-                },
-            },
+          query: createProfileMutation,
+          variables: {
+              input: {
+                  ...values,
+              },
+          },
         });
-        // event.target.reset();
+        await Storage.put(values.resume, "Protected Content", {
+          contentType: "text/plain", // contentType is optional
+        });
+        setSubmitting(false);
+        resetForm();
     };
 
     return (
@@ -424,7 +402,7 @@ const Profile = () => {
                         <button
                             type="button"
                             className="w-1/2 outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                            onClick={createProfileMethod}
+                            onClick={handleSubmit}
                         >
                             Submit
                         </button>
