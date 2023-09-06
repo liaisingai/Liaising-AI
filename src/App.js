@@ -248,7 +248,6 @@ const formFields = {
 
 
 const App = ({ signOut }) => {
-  // const [notes, setNotes] = useState([]);
   const [buttonIndex, setButtonIndex] = useState(0);
   const [input, setInput] = useState('');
   const selectedStateClasses = 'p-2 group/button relative flex w-full items-center justify-center gap-1 rounded-lg border py-3 outline-none transition-opacity duration-100 sm:w-auto sm:min-w-[148px] md:gap-2 md:py-2.5 border-black/10 bg-white text-gray-900 shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] hover:!opacity-100 dark:border-[#4E4F60] dark:bg-gray-700 dark:text-gray-100 bg-gradient-to-br from-purple-600 to-violet-500 text-white';
@@ -272,54 +271,6 @@ const App = ({ signOut }) => {
     setInput("");
   }, []);
 
-
-  // useEffect(() => {
-  //   fetchNotes();
-  // }, []);
-
-  // async function fetchNotes() {
-  //   const apiData = await API.graphql({ query: listNotes });
-  //   const notesFromAPI = apiData.data.listNotes.items;
-  //   await Promise.all(
-  //     notesFromAPI.map(async (note) => {
-  //       if (note.image) {
-  //         const url = await Storage.get(note.name);
-  //         note.image = url;
-  //       }
-  //       return note;
-  //     })
-  //   );
-  //   setNotes(notesFromAPI);
-  // }
-
-  // async function createNote(event) {
-  //   event.preventDefault();
-  //   const form = new FormData(event.target);
-  //   const image = form.get("image");
-  //   const data = {
-  //     name: form.get("name"),
-  //     description: form.get("description"),
-  //     image: image.name,
-  //   };
-  //   if (!!data.image) await Storage.put(data.name, image);
-  //   await API.graphql({
-  //     query: createNoteMutation,
-  //     variables: { input: data },
-  //   });
-  //   fetchNotes();
-  //   event.target.reset();
-  // }
-  
-  // async function deleteNote({ id, name }) {
-  //   const newNotes = notes.filter((note) => note.id !== id);
-  //   setNotes(newNotes);
-  //   await Storage.remove(name);
-  //   await API.graphql({
-  //     query: deleteNoteMutation,
-  //     variables: { input: { id } },
-  //   });
-  // }
-  
 
   return (
     <Authenticator formFields={formFields} components={components} socialProviders={['amazon', 'google']}>
@@ -451,9 +402,9 @@ const App = ({ signOut }) => {
                   </button>
                 </div>
             </div>}
-            {buttonIndex === 1 && <Suspense fallback="Upload Profiles..."><Profiles /></Suspense>}
-            {buttonIndex === 2 && <Suspense fallback="Upload Requirements..."><Requirements /></Suspense>}
-            {buttonIndex === 3 && <Suspense fallback="Loading Settings..."><Settings signOut={signOut} /></Suspense>}
+            {buttonIndex === 1 && <Suspense fallback=""><Profiles /></Suspense>}
+            {buttonIndex === 2 && <Suspense fallback=""><Requirements /></Suspense>}
+            {buttonIndex === 3 && <Suspense fallback=""><Settings signOut={signOut} /></Suspense>}
           </div>
         )
       }}
