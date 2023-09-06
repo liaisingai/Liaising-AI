@@ -58,7 +58,10 @@ export const requirementsValidationSchema = Yup.object().shape({
   recruiterName: Yup.string()
     .required('Recruiter Name is required'),
   recruiterPhoneNumber: Yup.string()
-    .matches(/^\+?[0-9]{1,15}$/, 'Invalid phone number format')
+    .matches(
+      /^\d{3}-\d{3}-\d{4}$/,
+      'Phone number should be in the format: xxx-xxx-xxxx'
+    )
     .required('Recruiter Phone Number is required'),
   recruiterEmailAddress: Yup.string()
     .email('Invalid email address')
@@ -66,6 +69,9 @@ export const requirementsValidationSchema = Yup.object().shape({
   recruiterLinkedInUrl: Yup.string()
     .url('Invalid LinkedIn URL format')
     .required('Recruiter LinkedIn URL is required'),
+  managerLinkedInUrl: Yup.string()
+    .url('Invalid LinkedIn URL format')
+    .optional('Manager LinkedIn URL is required'),
   clientName: Yup.string()
     .required('Client Name is required'),
   clientCareersUrl: Yup.string()
@@ -84,8 +90,10 @@ export const requirementsValidationSchema = Yup.object().shape({
   clientsState: Yup.string()
     .required('Client State is required'),
   clientsZip: Yup.string()
-    .required('Client Zip is required'),
-  dateRequirementPosted: Yup.date()
+    .matches(/^\d{5}$/, 'Zip code should be a 5-digit number')
+    .required('Zip code is required'),
+  dateRequirementPosted: Yup.string()
+    .matches(/^\d{4}-\d{2}-\d{2}$/, 'Date format should be in YYYY-MM-DD')
     .required('Date Req Posted is required'),
   jobTitle: Yup.string()
     .required('Job Title is required'),
@@ -95,4 +103,5 @@ export const requirementsValidationSchema = Yup.object().shape({
     .required('Billing Rate is required'),
   requirements: Yup.string()
     .required('Requirements are required'),
+  file: Yup.string().optional('Requirement file is required'),
 });

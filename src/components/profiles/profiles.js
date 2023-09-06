@@ -1,11 +1,12 @@
-import "./profiles.css";
+import { useState } from "react";
 import { Formik, Field, ErrorMessage } from "formik";
-// import { API, Storage } from 'aws-amplify';
 import { API, Storage } from "aws-amplify";
 import { createProfiles as createProfileMutation } from "../../graphql/mutations";
 import { profileValidationSchema } from "../../helpers/util.js";
 
 const Profile = () => {
+    const [formEvent, setFormEvent] = useState(null);
+    const [formSuccess, setFormSuccess] = useState(false);
     const initialValues = {
         firstName: "",
         lastName: "",
@@ -25,10 +26,8 @@ const Profile = () => {
     };
 
     const handleSubmit = async  (values, { setSubmitting, resetForm }) => {
-        const form = new FormData();
-        form.append('file', values.file);
-        // Handle form submission here
-        // console.log("values.file", values.file.substr(12, values.file.length))
+        const form = new FormData(formEvent.target);
+        const file = form.get("file");
         await API.graphql({
           query: createProfileMutation,
           variables: {
@@ -37,10 +36,19 @@ const Profile = () => {
               },
           },
         });
-        await Storage.put(values.file.substr(12, values.file.length), form.get('file'));
+        await Storage.put(`Profiles/${values.file.substr(12, values.file.length)}`, file);
+        setFormSuccess(true);
         setSubmitting(false);
         resetForm();
     };
+
+    const handleFormSubmit = (submitForm) =>
+    (e) => {
+      e.preventDefault()
+      e.persist()
+      setFormEvent(e)
+      submitForm()
+    }
 
     return (
       <div className="flex justify-center">
@@ -56,11 +64,14 @@ const Profile = () => {
                 touched,
                 handleChange,
                 handleBlur,
-                handleSubmit,
                 isSubmitting,
+                handleSubmit,
                 /* and other goodies */
             }) => (
-              <form className="w-full">
+              <form className="w-full" onSubmit={handleFormSubmit(handleSubmit)}>
+                {formSuccess && <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+                    <span className="font-medium">Success!</span> Your profile has been submitted.
+                </div>}
                 <div className="flex flex-col md:flex-row -mx-3 md:mb-4">
                   <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                       <label
@@ -143,7 +154,6 @@ const Profile = () => {
                           component="div"
                           className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />{" "}
-                      {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                   </div>
                   <div className="w-full md:w-1/3 px-3 mb-6">
                       <label
@@ -206,7 +216,6 @@ const Profile = () => {
                             component="div"
                             className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
-                        {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
                     <div className="w-full md:w-1/3 px-3 mb-6">
                         <label
@@ -269,7 +278,6 @@ const Profile = () => {
                             component="div"
                             className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
-                        {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <label
@@ -280,11 +288,11 @@ const Profile = () => {
                         </label>
                         <button
                             type="button"
-                            className="w-full outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3.5 text-center mr-2 mb-2"
+                            disabled
+                            className="cursor-not-allowed disabled:opacity-75 w-full outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3.5 text-center mr-2 mb-2"
                         >
                             References
                         </button>
-                        {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                         <label
@@ -305,7 +313,6 @@ const Profile = () => {
                             component="div"
                             className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
-                        {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
                 </div>
                 <div className="flex flex-col md:flex-row -mx-3 md:mb-[48px] mb-7">
@@ -402,9 +409,8 @@ const Profile = () => {
                             htmlFor="grid-last-name"
                         ></label>
                         <button
-                            type="button"
+                            type="submit"
                             className="w-1/2 outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                            onClick={handleSubmit}
                         >
                             Submit
                         </button>

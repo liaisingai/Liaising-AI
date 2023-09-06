@@ -91,6 +91,37 @@ export const createProfiles = /* GraphQL */ `
   }
 `;
 
+export const createRequirements = /* GraphQL */ `
+  mutation CreateRequirements(
+    $input: CreateRequirementsInput!
+    $condition: ModelRequirementsConditionInput
+  ) {
+    createRequirements(input: $input, condition: $condition) {
+      recruitingCompany
+      recruiterName
+      recruiterPhoneNumber
+      recruiterEmailAddress
+      recruiterLinkedInUrl
+      clientName
+      clientCareersUrl
+      typeOfJob
+      clientRecruiterEmail
+      clientRecruiterLinkedInUrl
+      clientsCity
+      clientsState
+      clientsZip
+      dateRequirementPosted
+      jobTitle
+      skillSet
+      billingRate
+      managerLinkedInUrl
+      requirements
+      file
+      __typename
+    }
+  }
+`;
+
 export const updateNote = /* GraphQL */ `
   mutation UpdateNote(
     $input: UpdateNoteInput!
