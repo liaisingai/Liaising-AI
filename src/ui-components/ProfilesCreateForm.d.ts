@@ -27,7 +27,7 @@ export declare type ProfilesCreateFormInputValues = {
     city?: string;
     state?: string;
     zip?: string;
-    resume?: string;
+    file?: string;
 };
 export declare type ProfilesCreateFormValidationValues = {
     firstName?: ValidationFunction<string>;
@@ -44,7 +44,7 @@ export declare type ProfilesCreateFormValidationValues = {
     city?: ValidationFunction<string>;
     state?: ValidationFunction<string>;
     zip?: ValidationFunction<string>;
-    resume?: ValidationFunction<string>;
+    file?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ProfilesCreateFormOverridesProps = {
@@ -63,7 +63,7 @@ export declare type ProfilesCreateFormOverridesProps = {
     city?: PrimitiveOverrideProps<TextFieldProps>;
     state?: PrimitiveOverrideProps<TextFieldProps>;
     zip?: PrimitiveOverrideProps<TextFieldProps>;
-    resume?: PrimitiveOverrideProps<TextFieldProps>;
+    file?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ProfilesCreateFormProps = React.PropsWithChildren<{
     overrides?: ProfilesCreateFormOverridesProps | undefined | null;

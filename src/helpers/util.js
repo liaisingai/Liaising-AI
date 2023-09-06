@@ -48,7 +48,7 @@ export const profileValidationSchema = Yup.object().shape({
       .matches(/^\d{5}$/, 'Zip code should be a 5-digit number')
       .required('Zip code is required'),
 
-    resume: Yup.string().required('Resume is required'),
+    file: Yup.string().required('Resume is required'),
 });
 
 

@@ -1,7 +1,7 @@
 import "./profiles.css";
 import { Formik, Field, ErrorMessage } from "formik";
 // import { API, Storage } from 'aws-amplify';
-import { API } from "aws-amplify";
+import { API, Storage } from "aws-amplify";
 import { createProfiles as createProfileMutation } from "../../graphql/mutations";
 import { profileValidationSchema } from "../../helpers/util.js";
 
@@ -21,11 +21,14 @@ const Profile = () => {
         city: "",
         state: "",
         zip: "",
-        resume: "",
+        file: "",
     };
 
     const handleSubmit = async  (values, { setSubmitting, resetForm }) => {
+        const form = new FormData();
+        form.append('file', values.file);
         // Handle form submission here
+        // console.log("values.file", values.file.substr(12, values.file.length))
         await API.graphql({
           query: createProfileMutation,
           variables: {
@@ -34,9 +37,7 @@ const Profile = () => {
               },
           },
         });
-        await Storage.put(values.resume, "Protected Content", {
-          contentType: "text/plain", // contentType is optional
-        });
+        await Storage.put(values.file.substr(12, values.file.length), form.get('file'));
         setSubmitting(false);
         resetForm();
     };
@@ -78,7 +79,7 @@ const Profile = () => {
                       <ErrorMessage
                           name="firstName"
                           component="div"
-                          className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                          className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />
                   </div>
                   <div className="w-full md:w-1/3 px-3 mb-6">
@@ -98,7 +99,7 @@ const Profile = () => {
                       <ErrorMessage
                           name="lastName"
                           component="div"
-                          className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                          className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />
                   </div>
                   <div className="w-full md:w-1/3 px-3 mb-6">
@@ -118,7 +119,7 @@ const Profile = () => {
                       <ErrorMessage
                           name="emailAddress"
                           component="div"
-                          className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                          className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />{" "}
                   </div>
                 </div>
@@ -140,7 +141,7 @@ const Profile = () => {
                       <ErrorMessage
                           name="phoneNumber"
                           component="div"
-                          className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                          className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />{" "}
                       {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                   </div>
@@ -161,7 +162,7 @@ const Profile = () => {
                       <ErrorMessage
                           name="skillSet"
                           component="div"
-                          className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                          className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />{" "}
                   </div>
                   <div className="w-full md:w-1/3 px-3 mb-6">
@@ -181,7 +182,7 @@ const Profile = () => {
                       <ErrorMessage
                           name="visaStatus"
                           component="div"
-                          className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                          className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                       />{" "}
                   </div>
                 </div>
@@ -203,7 +204,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="yearsOfExperienceInUs"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                         {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
@@ -224,7 +225,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="yearsOfExperienceInternational"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                     </div>
                     <div className="w-full md:w-1/3 px-3 mb-6">
@@ -244,7 +245,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="currentlyWorksAt"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                     </div>
                 </div>
@@ -266,7 +267,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="linkedInURL"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                         {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
@@ -302,7 +303,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="certifications"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                         {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                     </div>
@@ -325,7 +326,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="city"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                     </div>
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -345,7 +346,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="state"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                     </div>
                     <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -365,7 +366,7 @@ const Profile = () => {
                         <ErrorMessage
                             name="zip"
                             component="div"
-                            className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                            className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                         />{" "}
                     </div>
                 </div>
@@ -381,15 +382,16 @@ const Profile = () => {
                             <label className="block">
                               <Field
                                 type="file"
-                                id="resume"
-                                name="resume"
+                                id="file"
+                                name="file"
                                 placeholder=""
-                                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
+                                value={values.file}
+                                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:text-sm file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
                               />
                               <ErrorMessage
-                                  name="resume"
+                                  name="file"
                                   component="div"
-                                  className="text-violet-700 justify-left text-left"
+                                  className="text-red-400 text-sm pl-4 pt-1  justify-left text-left"
                               />{" "}
                             </label>
                         </div>

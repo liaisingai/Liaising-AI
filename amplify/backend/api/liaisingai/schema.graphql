@@ -36,7 +36,7 @@ type Profiles @model @auth(rules: [{allow: public}]) {
   city: String
   state: String
   zip: String
-  resume: String
+  file: String
 }
 
 type Note @model @auth(rules: [{allow: public}]) {

@@ -66,7 +66,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="recruiterName"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                     {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                                 </div>
@@ -87,7 +87,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="recruitingCompany"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6">
@@ -107,7 +107,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="recruiterPhoneNumber"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                             </div>
@@ -129,7 +129,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="recruiterEmailAddress"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -141,7 +141,7 @@ const Requirements = () => {
                                     </label>
                                     <button
                                         type="button"
-                                        className="w-full outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3.5 text-center mr-2 mb-2"
+                                        className="disabled:opacity-75 w-full outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3.5 text-center mr-2 mb-2"
                                     >
                                         Add a Impl. Partner
                                     </button>
@@ -164,7 +164,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientName"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                             </div>
@@ -186,7 +186,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientCareersUrl"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6">
@@ -206,7 +206,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="typeOfJob"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -226,7 +226,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="recruiterLinkedInUrl"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                     {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                                 </div>
@@ -249,7 +249,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientRecruiterEmail"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -269,7 +269,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientRecruiterLinkedInUrl"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                     {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                                 </div>
@@ -290,7 +290,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientsCity"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                             </div>
@@ -312,7 +312,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientsState"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -332,7 +332,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="clientsZip"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -352,7 +352,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="dateRequirementPosted"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                     {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                                 </div>
@@ -375,7 +375,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="jobTitle"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -395,7 +395,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="skillSet"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                     {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                                 </div>
@@ -416,7 +416,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="billingRate"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                     {/* {false && <p className="text-red-500 text-xs italic">Please fill out this field.</p>} */}
                                 </div>
@@ -439,7 +439,7 @@ const Requirements = () => {
                                     <ErrorMessage
                                         name="requirements"
                                         component="div"
-                                        className="text-red-400 font-semibold pl-4 pt-1 justify-left text-left"
+                                        className="text-red-400 text-sm pl-4 pt-1 justify-left text-left"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6">
@@ -453,7 +453,7 @@ const Requirements = () => {
                                         <label className="block">
                                             <input
                                                 type="file"
-                                                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
+                                                className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:text-sm file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
                                             />
                                         </label>
                                     </div>

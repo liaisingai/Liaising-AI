@@ -83,7 +83,7 @@ export const createProfiles = /* GraphQL */ `
       city
       state
       zip
-      resume
+      file
       createdAt
       updatedAt
       __typename

@@ -1597,7 +1597,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "resume",
+          "name" : "file",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
