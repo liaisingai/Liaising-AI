@@ -24,25 +24,25 @@ export default function NoteCreateForm(props) {
   } = props;
   const initialValues = {
     name: "",
-    description: "",
     image: "",
+    description: "",
   };
   const [name, setName] = React.useState(initialValues.name);
+  const [image, setImage] = React.useState(initialValues.image);
   const [description, setDescription] = React.useState(
     initialValues.description
   );
-  const [image, setImage] = React.useState(initialValues.image);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setName(initialValues.name);
-    setDescription(initialValues.description);
     setImage(initialValues.image);
+    setDescription(initialValues.description);
     setErrors({});
   };
   const validations = {
     name: [{ type: "Required" }],
-    description: [],
     image: [],
+    description: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -71,8 +71,8 @@ export default function NoteCreateForm(props) {
         event.preventDefault();
         let modelFields = {
           name,
-          description,
           image,
+          description,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -136,8 +136,8 @@ export default function NoteCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name: value,
-              description,
               image,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.name ?? value;
@@ -153,32 +153,6 @@ export default function NoteCreateForm(props) {
         {...getOverrideProps(overrides, "name")}
       ></TextField>
       <TextField
-        label="Description"
-        isRequired={false}
-        isReadOnly={false}
-        value={description}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              name,
-              description: value,
-              image,
-            };
-            const result = onChange(modelFields);
-            value = result?.description ?? value;
-          }
-          if (errors.description?.hasError) {
-            runValidationTasks("description", value);
-          }
-          setDescription(value);
-        }}
-        onBlur={() => runValidationTasks("description", description)}
-        errorMessage={errors.description?.errorMessage}
-        hasError={errors.description?.hasError}
-        {...getOverrideProps(overrides, "description")}
-      ></TextField>
-      <TextField
         label="Image"
         isRequired={false}
         isReadOnly={false}
@@ -188,8 +162,8 @@ export default function NoteCreateForm(props) {
           if (onChange) {
             const modelFields = {
               name,
-              description,
               image: value,
+              description,
             };
             const result = onChange(modelFields);
             value = result?.image ?? value;
@@ -203,6 +177,32 @@ export default function NoteCreateForm(props) {
         errorMessage={errors.image?.errorMessage}
         hasError={errors.image?.hasError}
         {...getOverrideProps(overrides, "image")}
+      ></TextField>
+      <TextField
+        label="Description"
+        isRequired={false}
+        isReadOnly={false}
+        value={description}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              name,
+              image,
+              description: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.description ?? value;
+          }
+          if (errors.description?.hasError) {
+            runValidationTasks("description", value);
+          }
+          setDescription(value);
+        }}
+        onBlur={() => runValidationTasks("description", description)}
+        errorMessage={errors.description?.errorMessage}
+        hasError={errors.description?.hasError}
+        {...getOverrideProps(overrides, "description")}
       ></TextField>
       <Flex
         justifyContent="space-between"

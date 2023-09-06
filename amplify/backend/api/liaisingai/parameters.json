@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "liaisingai",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-09-05T21:01:41.012Z"
 }

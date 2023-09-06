@@ -26,8 +26,8 @@ const components = {
     const { tokens } = useTheme();
 
     return (
-      <View textAlign="center" padding={tokens.space.large}>
-        <h1 className='companyName py-6 text-gray-600 hover:text-gray-900 cursor-pointer'>LIAISING AI</h1>
+      <View textAlign="center" padding={tokens.space.medium}>
+        <h1 className='companyName py-3 text-gray-600 hover:text-gray-900 cursor-pointer'>LIAISING AI</h1>
       </View>
     );
   },
@@ -36,7 +36,7 @@ const components = {
     const { tokens } = useTheme();
 
     return (
-      <View textAlign="center" padding={tokens.space.large}>
+      <View textAlign="center" padding={tokens.space.medium}>
         <Text color={tokens.colors.neutral[80]}>
           &copy; All Rights Reserved
         </Text>

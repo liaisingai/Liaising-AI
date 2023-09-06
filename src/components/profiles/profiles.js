@@ -1,12 +1,66 @@
 import "./profiles.css";
 import { Formik } from 'formik';
+// import { API, Storage } from 'aws-amplify';
+import { API } from 'aws-amplify';
+import {
+  createProfiles as createProfileMutation,
+} from "../../graphql/mutations";
 
 const Profile = () => {
+    const createProfileMethod = async(event) => {
+      event.preventDefault();
+      // const form = new FormData(event.target);
+      // const image = form.get("image");
+      const modelFields = {
+        firstName: "Sai",
+        lastName: "Sai",
+        emailAddress: "scr@test.com",
+        phoneNumber: "571-524-2266",
+        skillSet: "Sai",
+        visaStatus: "Sai",
+        yearsOfExperienceInUs: "Sai",
+        yearsOfExperienceInternational: "Sai",
+        currentlyWorksAt: "Sai",
+        linkedInURL: "Sai",
+        certifications: "Sai",
+        city: "Sai",
+        state: "Sai",
+        zip: "Sai",
+        resume: "Sai"
+      };
+      // if (!!data.resume) await Storage.put(data.name, resume);
+      await API.graphql({
+        query: createProfileMutation,
+        variables: {
+          input: {
+            ...modelFields,
+          },
+        },
+      });
+      // event.target.reset();
+    }
+    
     return (
       <div className='flex justify-center'>
         <div className='rounded-xl bg-white md:w-[75%] lg:w-[85%] md:max-h-[calc(100vh-300px)] md:min-h-[calc(100vh-300px)] max-h-[calc(100vh-250px)] min-h-[calc(100vh-250px)] mx-3 md:m-[12px] customBorder w-full text-center p-4 !pr-0 overflow-auto overflow-x-hidden'>
             <Formik
-              initialValues={{ email: '', password: '' }}
+              initialValues={{ 
+                firstName: "",
+                lastName: "",
+                emailAddress: "",
+                phoneNumber: "",
+                skillSet: "",
+                visaStatus: "",
+                yearsOfExperienceInUs: "",
+                yearsOfExperienceInternational: "",
+                currentlyWorksAt: "",
+                linkedInURL: "",
+                certifications: "",
+                city: "",
+                state: "",
+                zip: "",
+                resume: "" 
+              }}
               validate={values => {
                 const errors = {};
                 if (!values.email) {
@@ -171,7 +225,7 @@ const Profile = () => {
                       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                         
                       </label>
-                      <button type="button" className="w-1/2 outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Submit</button>
+                      <button type="button" className="w-1/2 outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={createProfileMethod}>Submit</button>
                     </div>
                   </div>
                 </form>

@@ -62,6 +62,35 @@ export const createNote = /* GraphQL */ `
     }
   }
 `;
+export const createProfiles = /* GraphQL */ `
+  mutation CreateProfiles(
+    $input: CreateProfilesInput!
+    $condition: ModelProfilesConditionInput
+  ) {
+    createProfiles(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      emailAddress
+      phoneNumber
+      skillSet
+      visaStatus
+      yearsOfExperienceInUs
+      yearsOfExperienceInternational
+      currentlyWorksAt
+      linkedInURL
+      certifications
+      city
+      state
+      zip
+      resume
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+
 export const updateNote = /* GraphQL */ `
   mutation UpdateNote(
     $input: UpdateNoteInput!
