@@ -330,7 +330,7 @@ const App = ({ signOut }) => {
             <div className='px-2 w-full flex flex-col'>
               <div className='relative flex flex-col items-stretch justify-center gap-2 sm:items-center mb-6 overflow-hidden'>
                 <div className='relative flex rounded-xl p-[12px] text-gray-900 bg-white shadow-slate-100 border customBorder'>
-                  <ul className="flex w-full list-none gap-1 sm:w-auto">
+                  <ul className="flex w-full list-none gap-1 sm:w-auto overflow-auto">
                     <li className='group/toggle w-full  h-full'>
                       <button className='w-full cursor-pointer' onClick={() => handleButtonClick(0)}>
                         <div className={buttonIndex === 0 ? selectedStateClasses : defaultClass}>
