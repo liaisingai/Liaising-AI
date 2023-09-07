@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import { API, Storage } from "aws-amplify";
 import { requirementsValidationSchema } from "../../helpers/util.js";
@@ -30,7 +30,6 @@ const Requirements = () => {
     };
 
     const handleSubmit = async  (values, { setSubmitting, resetForm }) => {
-        console.log('formEvent &&&', formEvent)
         const form = new FormData(formEvent.target);
         const file = form.get("file");
         await API.graphql({
@@ -524,4 +523,4 @@ const Requirements = () => {
     );
 };
 
-export default Requirements;
+export default memo(Requirements);

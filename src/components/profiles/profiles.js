@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import { API, Storage } from "aws-amplify";
 import { createProfiles as createProfileMutation } from "../../graphql/mutations";
@@ -424,4 +424,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default memo(Profile);
