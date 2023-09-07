@@ -39,7 +39,7 @@ export default function ProfilesUpdateForm(props) {
     city: "",
     state: "",
     zip: "",
-    resume: "",
+    file: "",
   };
   const [firstName, setFirstName] = React.useState(initialValues.firstName);
   const [lastName, setLastName] = React.useState(initialValues.lastName);
@@ -68,7 +68,7 @@ export default function ProfilesUpdateForm(props) {
   const [city, setCity] = React.useState(initialValues.city);
   const [state, setState] = React.useState(initialValues.state);
   const [zip, setZip] = React.useState(initialValues.zip);
-  const [resume, setResume] = React.useState(initialValues.resume);
+  const [file, setFile] = React.useState(initialValues.file);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = profilesRecord
@@ -90,7 +90,7 @@ export default function ProfilesUpdateForm(props) {
     setCity(cleanValues.city);
     setState(cleanValues.state);
     setZip(cleanValues.zip);
-    setResume(cleanValues.resume);
+    setFile(cleanValues.file);
     setErrors({});
   };
   const [profilesRecord, setProfilesRecord] = React.useState(profilesModelProp);
@@ -124,7 +124,7 @@ export default function ProfilesUpdateForm(props) {
     city: [],
     state: [],
     zip: [],
-    resume: [],
+    file: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -167,7 +167,7 @@ export default function ProfilesUpdateForm(props) {
           city: city ?? null,
           state: state ?? null,
           zip: zip ?? null,
-          resume: resume ?? null,
+          file: file ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -242,7 +242,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.firstName ?? value;
@@ -280,7 +280,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.lastName ?? value;
@@ -318,7 +318,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.emailAddress ?? value;
@@ -357,7 +357,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.phoneNumber ?? value;
@@ -395,7 +395,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.skillSet ?? value;
@@ -433,7 +433,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.visaStatus ?? value;
@@ -471,7 +471,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.yearsOfExperienceInUs ?? value;
@@ -511,7 +511,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.yearsOfExperienceInternational ?? value;
@@ -554,7 +554,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.currentlyWorksAt ?? value;
@@ -592,7 +592,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.linkedInURL ?? value;
@@ -630,7 +630,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.certifications ?? value;
@@ -668,7 +668,7 @@ export default function ProfilesUpdateForm(props) {
               city: value,
               state,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.city ?? value;
@@ -706,7 +706,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state: value,
               zip,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.state ?? value;
@@ -744,7 +744,7 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip: value,
-              resume,
+              file,
             };
             const result = onChange(modelFields);
             value = result?.zip ?? value;
@@ -760,10 +760,10 @@ export default function ProfilesUpdateForm(props) {
         {...getOverrideProps(overrides, "zip")}
       ></TextField>
       <TextField
-        label="Resume"
+        label="File"
         isRequired={false}
         isReadOnly={false}
-        value={resume}
+        value={file}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
@@ -782,20 +782,20 @@ export default function ProfilesUpdateForm(props) {
               city,
               state,
               zip,
-              resume: value,
+              file: value,
             };
             const result = onChange(modelFields);
-            value = result?.resume ?? value;
+            value = result?.file ?? value;
           }
-          if (errors.resume?.hasError) {
-            runValidationTasks("resume", value);
+          if (errors.file?.hasError) {
+            runValidationTasks("file", value);
           }
-          setResume(value);
+          setFile(value);
         }}
-        onBlur={() => runValidationTasks("resume", resume)}
-        errorMessage={errors.resume?.errorMessage}
-        hasError={errors.resume?.hasError}
-        {...getOverrideProps(overrides, "resume")}
+        onBlur={() => runValidationTasks("file", file)}
+        errorMessage={errors.file?.errorMessage}
+        hasError={errors.file?.hasError}
+        {...getOverrideProps(overrides, "file")}
       ></TextField>
       <Flex
         justifyContent="space-between"
