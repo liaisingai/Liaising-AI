@@ -2,7 +2,8 @@
 import React, { useState, useCallback, lazy, Suspense } from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-// import { API, Storage } from 'aws-amplify';
+// import { Route } from "react-router-dom";
+import { loadStripe } from '@stripe/stripe-js';
 import {
   Button,
   Heading,
@@ -12,11 +13,6 @@ import {
   useAuthenticator,
   Authenticator,
 } from '@aws-amplify/ui-react';
-// import { listNotes } from "./graphql/queries";
-// import {
-//   createNote as createNoteMutation,
-//   deleteNote as deleteNoteMutation,
-// } from "./graphql/mutations";
 const Profiles = lazy(() =>  import("./components/profiles/profiles"));
 const Requirements = lazy(() =>  import("./components/requirements/requirements"));
 const Settings = lazy(() =>  import("./components/settings/settings"));
@@ -247,7 +243,7 @@ const formFields = {
 
 
 
-const App = ({ signOut }) => {
+const App = () => {
   const [buttonIndex, setButtonIndex] = useState(0);
   const [input, setInput] = useState('');
   const selectedStateClasses = 'p-2 group/button relative flex w-full items-center justify-center gap-1 rounded-lg border py-3 outline-none transition-opacity duration-100 sm:w-auto sm:min-w-[148px] md:gap-2 md:py-2.5 border-black/10 bg-white text-gray-900 shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] hover:!opacity-100 dark:border-[#4E4F60] dark:bg-gray-700 dark:text-gray-100 bg-gradient-to-br from-purple-600 to-violet-500 text-white';
@@ -271,6 +267,26 @@ const App = ({ signOut }) => {
     setInput("");
   }, []);
 
+  const handlePayment = useCallback(async () => {
+    const stripe = await loadStripe(
+      "pk_test_51NnT40C1ydQ7c7bBnAjzSyUpjbPvRxpSqoZeLTTcMVgMwdzVvld7ND8YzLYANnsaKGOKEwqxeB2moT8TYyivphaG00DNtgVbuj"
+    );
+    const error = await stripe.redirectToCheckout({
+      lineItems: [
+        {
+          price: "price_1NnT9iC1ydQ7c7bBEKZ3TgNc",
+          quantity: 1,
+        }
+      ],
+      mode: "subscription",
+      successUrl: 'https://www.liaisingai.com/',
+      cancelUrl: "https://www.liaisingai.com/"
+    });
+    if (error) {
+      console.warn("Error")
+    }
+  }, [])
+
 
   return (
     <Authenticator formFields={formFields} components={components} socialProviders={['amazon', 'google']}>
@@ -278,6 +294,16 @@ const App = ({ signOut }) => {
         return (
           <div className="App !overflow-hidden !h-screen">
             <h1 className='companyName py-6 text-gray-600 hover:text-gray-900 cursor-pointer'>LIAISING AI</h1>
+            {/* <div className="flex flex-col">
+              <button
+                type="button"
+                onClick={handlePayment}
+                className="w-full md:w-1/3 self-end outline-auto text-white bg-gradient-to-br from-purple-600 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-3.5 text-center mr-2 mb-2"
+              >
+                  Buy Subscription
+              </button>
+            </div> */}
+
             <div className='px-2 w-full flex flex-col'>
               <div className='relative flex flex-col items-stretch justify-center gap-2 sm:items-center mb-6 overflow-hidden'>
                 <div className='relative flex rounded-xl p-[12px] text-gray-900 bg-white shadow-slate-100 border customBorder'>

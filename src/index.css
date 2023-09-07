@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Söhne, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ECEAEA;
+  background-color: rgb(236, 238, 244);
 }
 
 button:focus {
@@ -19,3 +19,4 @@ button:focus {
   content:" *";
   color: red;
 }
+

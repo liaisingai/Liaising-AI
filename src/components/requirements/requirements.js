@@ -90,7 +90,7 @@ const Requirements = () => {
                                         id="recruiterName"
                                         name="recruiterName"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="recruiterName"
@@ -110,7 +110,7 @@ const Requirements = () => {
                                         id="recruitingCompany"
                                         name="recruitingCompany"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="recruitingCompany"
@@ -130,7 +130,7 @@ const Requirements = () => {
                                         id="recruiterPhoneNumber"
                                         name="recruiterPhoneNumber"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="recruiterPhoneNumber"
@@ -152,7 +152,7 @@ const Requirements = () => {
                                         id="recruiterEmailAddress"
                                         name="recruiterEmailAddress"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="recruiterEmailAddress"
@@ -187,7 +187,7 @@ const Requirements = () => {
                                         id="clientName"
                                         name="clientName"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientName"
@@ -209,7 +209,7 @@ const Requirements = () => {
                                         id="clientCareersUrl"
                                         name="clientCareersUrl"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientCareersUrl"
@@ -229,7 +229,7 @@ const Requirements = () => {
                                         id="typeOfJob"
                                         name="typeOfJob"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="typeOfJob"
@@ -249,7 +249,7 @@ const Requirements = () => {
                                         id="recruiterLinkedInUrl"
                                         name="recruiterLinkedInUrl"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="recruiterLinkedInUrl"
@@ -271,7 +271,7 @@ const Requirements = () => {
                                         id="clientRecruiterEmail"
                                         name="clientRecruiterEmail"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientRecruiterEmail"
@@ -291,7 +291,7 @@ const Requirements = () => {
                                         id="clientRecruiterLinkedInUrl"
                                         name="clientRecruiterLinkedInUrl"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientRecruiterLinkedInUrl"
@@ -311,7 +311,7 @@ const Requirements = () => {
                                         id="clientsCity"
                                         name="clientsCity"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientsCity"
@@ -320,8 +320,8 @@ const Requirements = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="flex flex-col md:flex-row -mx-3 md:mb-[48px] lg:mb-3 mb-7">
-                                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                            <div className="flex flex-col md:flex-row -mx-3 md:mb-4 lg:mb-3">
+                                <div className="w-full md:w-1/3 px-3 mb-6">
                                     <label
                                         className="required block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                         htmlFor="grid-state"
@@ -333,7 +333,7 @@ const Requirements = () => {
                                         id="clientsState"
                                         name="clientsState"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientsState"
@@ -353,7 +353,7 @@ const Requirements = () => {
                                         id="clientsZip"
                                         name="clientsZip"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="clientsZip"
@@ -373,7 +373,7 @@ const Requirements = () => {
                                         id="dateRequirementPosted"
                                         name="dateRequirementPosted"
                                         placeholder="YYYY-MM-DD"
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="dateRequirementPosted"
@@ -395,7 +395,7 @@ const Requirements = () => {
                                         id="jobTitle"
                                         name="jobTitle"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="jobTitle"
@@ -415,7 +415,7 @@ const Requirements = () => {
                                         id="skillSet"
                                         name="skillSet"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="skillSet"
@@ -435,7 +435,7 @@ const Requirements = () => {
                                         id="billingRate"
                                         name="billingRate"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="billingRate"
@@ -457,7 +457,7 @@ const Requirements = () => {
                                         id="managerLinkedInUrl"
                                         name="managerLinkedInUrl"
                                         placeholder=""
-                                        className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                     <ErrorMessage
                                         name="managerLinkedInUrl"
@@ -477,7 +477,7 @@ const Requirements = () => {
                                         id="requirements"
                                         name="requirements"
                                         placeholder=""
-                                        className="appearance-none h-[46px] block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                                        className="appearance-none h-[46px] block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                     />
                                 </div>
                                 <div className="w-full md:w-1/3 px-3 mb-6">

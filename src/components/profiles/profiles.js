@@ -85,7 +85,7 @@ const Profile = () => {
                           id="firstName"
                           name="firstName"
                           placeholder=""
-                          className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                          className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                       />
                       <ErrorMessage
                           name="firstName"
@@ -105,7 +105,7 @@ const Profile = () => {
                           id="lastName"
                           name="lastName"
                           placeholder=""
-                          className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                          className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                       />
                       <ErrorMessage
                           name="lastName"
@@ -125,7 +125,7 @@ const Profile = () => {
                           id="emailAddress"
                           name="emailAddress"
                           placeholder=""
-                          className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                          className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                       />
                       <ErrorMessage
                           name="emailAddress"
@@ -147,7 +147,7 @@ const Profile = () => {
                           id="phoneNumber"
                           name="phoneNumber"
                           placeholder=""
-                          className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                          className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                       />
                       <ErrorMessage
                           name="phoneNumber"
@@ -167,7 +167,7 @@ const Profile = () => {
                           id="skillSet"
                           name="skillSet"
                           placeholder=""
-                          className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                          className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                       />
                       <ErrorMessage
                           name="skillSet"
@@ -187,7 +187,7 @@ const Profile = () => {
                           id="visaStatus"
                           name="visaStatus"
                           placeholder=""
-                          className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                          className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                       />
                       <ErrorMessage
                           name="visaStatus"
@@ -209,7 +209,7 @@ const Profile = () => {
                             id="yearsOfExperienceInUs"
                             name="yearsOfExperienceInUs"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="yearsOfExperienceInUs"
@@ -229,7 +229,7 @@ const Profile = () => {
                             id="yearsOfExperienceInternational"
                             name="yearsOfExperienceInternational"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="yearsOfExperienceInternational"
@@ -249,7 +249,7 @@ const Profile = () => {
                             id="currentlyWorksAt"
                             name="currentlyWorksAt"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="currentlyWorksAt"
@@ -271,7 +271,7 @@ const Profile = () => {
                             id="linkedInURL"
                             name="linkedInURL"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="linkedInURL"
@@ -306,7 +306,7 @@ const Profile = () => {
                             id="certifications"
                             name="certifications"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="certifications"
@@ -328,7 +328,7 @@ const Profile = () => {
                             id="city"
                             name="city"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="city"
@@ -348,7 +348,7 @@ const Profile = () => {
                             id="state"
                             name="state"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="state"
@@ -368,7 +368,7 @@ const Profile = () => {
                             id="zip"
                             name="zip"
                             placeholder=""
-                            className="appearance-none block w-full bg-gray-200 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            className="appearance-none block w-full bg-gray-100 text-gray-900 text-md border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                         />
                         <ErrorMessage
                             name="zip"
