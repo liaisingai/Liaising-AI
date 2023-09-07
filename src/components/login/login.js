@@ -11,6 +11,7 @@ import {
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
+
 import { useNavigate, useLocation } from 'react-router';
 
 const components = {  
@@ -234,7 +235,11 @@ const Login = () => {
   let from = location.state?.from?.pathname || '/';
   useEffect(() => {
     if (route === 'authenticated') {
-      navigate("/subscriptions");
+      if (from === "/find") {
+        navigate("/find")
+      } else {
+        navigate("/subscriptions")
+      }
     }
   }, [route, navigate, from]);
   return (
