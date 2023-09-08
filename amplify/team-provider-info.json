@@ -24,7 +24,8 @@
       "function": {
         "stripe": {
           "deploymentBucketName": "amplify-amplify485a4fc13c564-staging-144708-deployment",
-          "s3Key": "amplify-builds/stripe-6d6156522f7442546d6b-build.zip"
+          "s3Key": "amplify-builds/stripe-6d6156522f7442546d6b-build.zip",
+          "stripeKey": "sk_test_51NnT40C1ydQ7c7bB67JwDWFJadWNcsgIqk3tODk2E3RhLlHMaL7Ff521BV26cQItANHmOZZMNA2nlBejG1gUV0Z300cmoV6MhL"
         }
       },
       "analytics": {

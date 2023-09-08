@@ -59,6 +59,7 @@
   "function": {
     "stripe": {
       "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -73,6 +74,14 @@
       ]
     },
     "AMPLIFY_function_stripe_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripe"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripe_stripeKey": {
       "usedBy": [
         {
           "category": "function",
