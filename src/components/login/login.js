@@ -244,7 +244,7 @@ const Login = () => {
   }, [route, navigate, from]);
   return (
     <View className="auth-wrapper mt-[12px]">
-      <Authenticator components={components} formFields={formFields} socialProviders={['amazon', 'google']}></Authenticator>
+      <Authenticator components={components} formFields={formFields} socialProviders={['google']}></Authenticator>
     </View>
   );
 }

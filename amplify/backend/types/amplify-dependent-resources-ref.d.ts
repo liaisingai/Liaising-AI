@@ -1,4 +1,11 @@
 export type AmplifyDependentResourcesAttributes = {
+  "analytics": {
+    "liaisingaiKinesis": {
+      "kinesisStreamArn": "string",
+      "kinesisStreamId": "string",
+      "kinesisStreamShardCount": "string"
+    }
+  },
   "api": {
     "liaisingai": {
       "GraphQLAPIEndpointOutput": "string",
