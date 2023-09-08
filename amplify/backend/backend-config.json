@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "liaisingaiKinesis": {
+      "providerPlugin": "awscloudformation",
+      "service": "Kinesis"
+    }
+  },
   "api": {
     "liaisingai": {
       "dependsOn": [],

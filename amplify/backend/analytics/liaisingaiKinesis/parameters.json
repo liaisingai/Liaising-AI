@@ -1,0 +1,12 @@
+{
+  "kinesisStreamName": "liaisingaiKinesis",
+  "kinesisStreamShardCount": 1,
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authPolicyName": "kinesis_amplify_8276695e",
+  "unauthPolicyName": "kinesis_amplify_8276695e"
+}
