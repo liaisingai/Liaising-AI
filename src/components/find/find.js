@@ -1,8 +1,22 @@
 import "./find.css";
-import { memo, useCallback, useState} from "react";
+import { memo, useCallback, useState, useEffect } from "react";
+import { API } from "aws-amplify";
+import { listProfiles, listRequirements } from "../../graphql/queries";
 
 const Find = () => {
   const [input, setInput] = useState('');
+
+  const fetchProfiles = async () => {
+    const apiData = await API.graphql({ query: listProfiles });
+    const profilesFromAPI = apiData.data.listProfiles.items;
+    console.log("profilesFromAPI", profilesFromAPI)
+  }
+
+  const fetchRequirements = async () => {
+    const apiData = await API.graphql({ query: listRequirements });
+    const requirementsFromAPI = apiData.data.listRequirements.items;
+    console.log("requirementsFromAPI", requirementsFromAPI)
+  }
 
   const handleTextChange = useCallback((e) => {
     setInput(e?.target?.value);
@@ -19,6 +33,10 @@ const Find = () => {
     setInput("");
   }, []);
 
+  useEffect(() => {
+    fetchProfiles();
+    fetchRequirements();
+  }, [])
 
   return (
     <div className="App !overflow-hidden !h-screen">
