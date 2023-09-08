@@ -56,14 +56,7 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "stripe": {
-      "build": true,
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
+  "function": {},
   "storage": {
     "imagestorage": {
       "dependsOn": [],
