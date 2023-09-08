@@ -9,10 +9,36 @@ import {
   useAuthenticator,
   Authenticator,
 } from '@aws-amplify/ui-react';
+import { API } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
-
-
 import { useNavigate, useLocation } from 'react-router';
+
+import Auth from '@aws-amplify/auth';
+import Lambda from 'aws-sdk/clients/lambda'; // npm install aws-sdk
+
+console.log("FOO", Auth.currentCredentials()
+  .then(credentials => {
+    console.log("credentials", credentials)
+    const lambda = new Lambda({
+      credentials: Auth.essentialCredentials(credentials)
+    });
+    return lambda.invoke({
+      FunctionName: 'stripeLambdaFunction',
+    })
+  }).then(res => console.log("dd", res)))
+
+
+async function callLambdaFunction() {
+  try {
+    const response = await API.post('stripeLambdaFunction');
+    console.log('Lambda response:', response);
+  } catch (error) {
+    console.error('Error calling Lambda function:', error);
+  }
+}
+
+// Call the Lambda function when needed
+callLambdaFunction();
 
 const components = {  
     Footer() {

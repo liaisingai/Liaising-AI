@@ -23,6 +23,12 @@
       },
       "analytics": {
         "liaisingaiKinesis": {}
+      },
+      "function": {
+        "stripeLambdaFunction": {
+          "deploymentBucketName": "amplify-amplify485a4fc13c564-staging-144708-deployment",
+          "s3Key": "amplify-builds/stripeLambdaFunction-596d73314a354f31616a-build.zip"
+        }
       }
     }
   }

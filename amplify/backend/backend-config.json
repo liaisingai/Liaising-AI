@@ -56,7 +56,31 @@
       "service": "Cognito"
     }
   },
-  "function": {},
+  "function": {
+    "stripeLambdaFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_stripeLambdaFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripeLambdaFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripeLambdaFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripeLambdaFunction"
+        }
+      ]
+    }
+  },
   "storage": {
     "imagestorage": {
       "dependsOn": [],
