@@ -9,36 +9,10 @@ import {
   useAuthenticator,
   Authenticator,
 } from '@aws-amplify/ui-react';
-import { API } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
+import axios from "axios";
 import { useNavigate, useLocation } from 'react-router';
 
-import Auth from '@aws-amplify/auth';
-import Lambda from 'aws-sdk/clients/lambda'; // npm install aws-sdk
-
-console.log("FOO", Auth.currentCredentials()
-  .then(credentials => {
-    console.log("credentials", credentials)
-    const lambda = new Lambda({
-      credentials: Auth.essentialCredentials(credentials)
-    });
-    return lambda.invoke({
-      FunctionName: 'stripeLambdaFunction',
-    })
-  }).then(res => console.log("dd", res)))
-
-
-async function callLambdaFunction() {
-  try {
-    const response = await API.post('stripeLambdaFunction');
-    console.log('Lambda response:', response);
-  } catch (error) {
-    console.error('Error calling Lambda function:', error);
-  }
-}
-
-// Call the Lambda function when needed
-callLambdaFunction();
 
 const components = {  
     Footer() {
@@ -259,14 +233,22 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || '/';
+
   useEffect(() => {
-    if (route === 'authenticated') {
-      if (from === "/find") {
-        navigate("/find")
-      } else {
-        navigate("/find") // will update
+    const checkAuth = async () => {
+      if (route === 'authenticated') {
+        const res = await axios.get('https://u74wx5t6a6s4gzqbr5aclnu2dm0oormn.lambda-url.us-east-1.on.aws/');
+        if (res?.data?.status !== "active") {
+          navigate("/subscriptions");
+        } else if (from === "/") {
+          navigate("/find");
+        } else {
+          navigate(from, { replace: true });
+        }
       }
-    }
+    };
+    checkAuth()
+
   }, [route, navigate, from]);
   return (
     <View className="auth-wrapper mt-[12px]">

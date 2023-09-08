@@ -20,11 +20,11 @@ const MyRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Login />} />
+          <Route index element={<Suspense fallback=" "><Login /></Suspense>} />
           <Route
             path="/find"
             element={
-              <Auth>
+              <Auth> 
                 <Suspense fallback=""><Find /></Suspense>
               </Auth>
             }
@@ -33,7 +33,7 @@ const MyRoutes = () => {
             path="/profiles"
             element={
               <Auth>
-                <Suspense fallback=""><Profiles /></Suspense>
+                <Suspense fallback=" "><Profiles /></Suspense>
               </Auth>
             }
           />
@@ -41,7 +41,7 @@ const MyRoutes = () => {
             path="/requirements"
             element={
               <Auth>
-                <Suspense fallback=""><Requirements /></Suspense>
+                <Suspense fallback=" "><Requirements /></Suspense>
               </Auth>
             }
           />
@@ -49,7 +49,7 @@ const MyRoutes = () => {
             path="/settings"
             element={
               <Auth>
-                <Suspense fallback=""><Settings /></Suspense>
+                <Suspense fallback=" "><Settings /></Suspense>
               </Auth>
             }
           />
@@ -57,11 +57,11 @@ const MyRoutes = () => {
             path="/subscriptions"
             element={
               <Auth>
-                <Suspense fallback=""><Subscription /></Suspense>
+                <Suspense fallback=" "><Subscription /></Suspense>
               </Auth>
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Suspense fallback=" "><Login /></Suspense>} />
         </Route>
       </Routes>
     </BrowserRouter>
