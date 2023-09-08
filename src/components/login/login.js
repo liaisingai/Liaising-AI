@@ -238,7 +238,7 @@ const Login = () => {
       if (from === "/find") {
         navigate("/find")
       } else {
-        navigate("/subscriptions")
+        navigate("/find") // will update
       }
     }
   }, [route, navigate, from]);
