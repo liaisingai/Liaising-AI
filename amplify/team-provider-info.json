@@ -20,6 +20,15 @@
       },
       "storage": {
         "imagestorage": {}
+      },
+      "function": {
+        "stripe": {
+          "deploymentBucketName": "amplify-amplify485a4fc13c564-staging-144708-deployment",
+          "s3Key": "amplify-builds/stripe-6d6156522f7442546d6b-build.zip"
+        }
+      },
+      "analytics": {
+        "liaisingaiKinesis": {}
       }
     }
   }
