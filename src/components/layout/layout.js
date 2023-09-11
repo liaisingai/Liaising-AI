@@ -13,7 +13,7 @@ const Layout = () => {
     const selectedStateClasses = 'p-2 group/button relative flex w-full items-center justify-center gap-1 rounded-lg border py-3 outline-none transition-opacity duration-100 sm:w-auto sm:min-w-[148px] md:gap-2 md:py-2.5 border-black/10 bg-white text-gray-900 shadow-[0_1px_7px_0px_rgba(0,0,0,0.06)] hover:!opacity-100 dark:border-[#4E4F60] dark:bg-gray-700 dark:text-gray-100 bg-gradient-to-br from-purple-600 to-violet-500 !text-white';
     const defaultClass = 'p-2 group/button relative flex w-full items-center justify-center gap-1 rounded-lg border py-3 outline-none transition-opacity duration-100 sm:w-auto sm:min-w-[148px] md:gap-2 md:py-2.5 border-transparent text-gray-500 hover:text-gray-800 hover:dark:text-gray-100';
     return (
-        <div className="App !overflow-hidden !h-screen">
+        <div className={`App !overflow-hidden ${location.pathname === "/login" ? "" : '!h-screen'}`}>
             <h1 className="companyName py-6 text-gray-600 hover:text-gray-900 cursor-pointer">
                 LIAISING AI
             </h1>
